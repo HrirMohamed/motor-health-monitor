@@ -41,8 +41,6 @@ motor-health-monitor/
 │   ├── Core/
 │   │   ├── Src/
 │   │   └── Inc/
-│   ├── Drivers/
-│   └── Middlewares/
 │
 ├── documentation/
 │   ├── screenshots/
