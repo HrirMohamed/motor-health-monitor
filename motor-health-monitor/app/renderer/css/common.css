@@ -1,0 +1,229 @@
+/* ==================================================
+   RESET
+================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==================================================
+   BODY
+================================================== */
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    font-family:"Segoe UI",sans-serif;
+    background:#EEF2F7;
+    color:#2D3748;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header{
+    height:70px;
+    background:#163e2c;
+    color:#FFF;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 30px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.header-logo{
+    width:125px;
+    height:125px;
+    object-fit:contain;
+}
+
+.header h1{
+    font-size:26px;
+    margin:0;
+}
+
+/* ==================================================
+   CONNECTION STATUS
+================================================== */
+
+.connection-status{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+}
+
+.status{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+}
+
+.status.online{
+    background:#2E7D32;
+}
+
+.status.offline{
+    background:#C62828;
+}
+
+.status.simulation{
+    background:#F9A825;
+}
+
+/* ==================================================
+   MAIN
+================================================== */
+
+main{
+    flex:1;
+    padding:15px;
+}
+
+/* ==================================================
+   CARD
+================================================== */
+
+.card{
+    background:#FFF;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+
+.card h2{
+    color:#16324F;
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+/* ==================================================
+   FORM ELEMENTS
+================================================== */
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:6px;
+    font-size:13px;
+    color:#555;
+}
+
+.form-group input,
+.form-group select{
+    padding:10px;
+    border:1px solid #CCC;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    outline:none;
+    border-color:#1565C0;
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+button{
+    background:#14994b;
+    color:#FFF;
+    border:none;
+    border-radius:8px;
+    padding:12px 22px;
+    cursor:pointer;
+    font-size:15px;
+    transition:.25s;
+}
+
+button:hover{
+    background:#08642d;
+}
+
+button:disabled{
+    background:#BDBDBD;
+    cursor:not-allowed;
+}
+
+.center{
+    text-align:center;
+    margin-top:20px;
+}
+
+/* ==================================================
+   INPUT ROW
+================================================== */
+
+.current-input{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin:12px 0;
+}
+
+.current-input label{
+    flex:1;
+}
+
+.current-input input,
+.current-input select{
+    flex:1;
+    padding:8px;
+    border:1px solid #CCC;
+    border-radius:8px;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer{
+    height:65px;
+    background:#FFF;
+    border-top:1px solid #DDD;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media(max-width:900px){
+
+    .header{
+        padding:0 15px;
+    }
+
+    .header h1{
+        font-size:22px;
+    }
+
+}

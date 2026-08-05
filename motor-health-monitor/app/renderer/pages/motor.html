@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Informations du moteur</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/motor.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-left">
+        <img src="ocp-logoo.png" alt="Logo de l'entreprise" class="header-logo">
+
+        <h1>Système de maintenance</h1>
+    </div>
+
+    <div class="connection-status">
+    </div>
+
+</header>
+
+<main class="motor-page">
+
+    <section class="card motor-card">
+
+        <h2>
+
+            <i class="fa-solid fa-gears"></i>
+
+            Informations du moteur
+
+        </h2>
+
+        <div class="motor-grid">
+
+            <div class="form-group">
+
+                <label>ID du moteur</label>
+
+                <input type="text" id="motorID">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Nom du moteur</label>
+
+                <input type="text" id="motorName">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Tension (V)</label>
+
+                <input type="number" id="voltage">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Puissance (kW)</label>
+
+                <input type="number" id="power">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Courant nominal (A)</label>
+
+                <input type="number" id="ratedCurrent">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Fréquence (Hz)</label>
+
+                <input type="number" id="frequency" value="50">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Type de moteur</label>
+
+                <select id="motorType">
+
+                    <option>Asynchrone</option>
+                    <option>Synchrone</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Nombre de pôles</label>
+
+                <select id="poles">
+
+                    <option>2</option>
+                    <option selected>4</option>
+                    <option>6</option>
+                    <option>8</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="center">
+
+            <button id="startInspection">
+
+                <i class="fa-solid fa-play"></i>
+
+                Démarrer l'inspection
+
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="../js/motor.js"></script>
+
+</body>
+
+</html>

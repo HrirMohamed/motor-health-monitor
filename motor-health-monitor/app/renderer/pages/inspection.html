@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Maintenance</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/inspection.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+   <header class="header">
+
+    <div class="header-left">
+        <img src="ocp-logoo.png" alt="Company Logo" class="header-logo">
+
+        <h1>Système de maintenance</h1>
+    </div>
+</header>
+
+    <main>
+        <!-- TOP MOTOR SUMMARY -->
+      <section class="card motor-summary">
+    <h2><i class="fa-solid fa-microchip"></i> Moteur actuel</h2>
+
+    <div class="summary-grid">
+        <div><strong>ID :</strong> <span id="summaryID">--</span></div>
+        <div><strong>Nom :</strong> <span id="summaryName">--</span></div>
+        <div><strong>Tension :</strong> <span id="summaryVoltage">--</span></div>
+        <div><strong>Puissance :</strong> <span id="summaryPower">--</span></div>
+        <div><strong>Courant nominal :</strong> <span id="summaryCurrent">--</span></div>
+        <div><strong>Type :</strong> <span id="summaryType">--</span></div>
+        <div><strong>Nombre de pôles :</strong> <span id="summaryPoles">--</span></div>
+    </div>
+</section>
+
+        <!-- DASHBOARD SPLIT (LEFT / RIGHT) -->
+       <div class="dashboard">
+
+    <!-- PANNEAU GAUCHE -->
+    <div class="left-panel">
+        <div class="card">
+            <h2>Température</h2>
+            <div id="temperatureValue" class="sensor-value">-- °C</div>
+        </div>
+
+        <div class="card">
+            <h2>Vibration</h2>
+            <div id="vibrationValue" class="sensor-value">-- mm/s</div>
+        </div>
+
+        <div class="card">
+            <h2>Vitesse de rotation</h2>
+            <div id="speedValue" class="sensor-value">-- tr/min</div>
+        </div>
+
+        <div class="card acquisition-card">
+            <h2>Acquisition</h2>
+
+            <div class="progress-container">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+
+            <div class="progress-info">
+                <span id="progressTime">0 / 60 s</span>
+                <span id="progressPercent">0%</span>
+            </div>
+
+            <div class="center" style="margin-top: 8px;">
+                <button id="startAcquisition" disabled>
+                    <i class="fa-solid fa-play"></i> Démarrer l'acquisition
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANNEAU DROIT -->
+    <div class="right-panel">
+
+        <div class="card currents-card">
+            <h2>Mesures électriques</h2>
+
+            <h3>Courants des phases (A)</h3>
+
+            <div class="current-input">
+                <label>Phase A</label>
+                <input type="number" id="phaseA" disabled>
+            </div>
+
+            <div class="current-input">
+                <label>Phase B</label>
+                <input type="number" id="phaseB" disabled>
+            </div>
+
+            <div class="current-input">
+                <label>Phase C</label>
+                <input type="number" id="phaseC" disabled>
+            </div>
+
+            <hr>
+
+            <h3>Résistance des enroulements (Ω)</h3>
+
+            <div class="current-input">
+                <label>Phase A</label>
+                <input type="number" id="resistanceA">
+            </div>
+
+            <div class="current-input">
+                <label>Phase B</label>
+                <input type="number" id="resistanceB">
+            </div>
+
+            <div class="current-input">
+                <label>Phase C</label>
+                <input type="number" id="resistanceC">
+            </div>
+
+            <hr>
+
+            <h3>Résistance d'isolement (GΩ)</h3>
+
+            <div class="current-input">
+    <label>Ph / Ph</label>
+    <input type="number" id="insulationPhasePhase">
+</div>
+
+            <div class="current-input">
+                <label>U → Terre</label>
+                <input type="number" id="insulationU">
+            </div>
+
+            <div class="current-input">
+                <label>V → Terre</label>
+                <input type="number" id="insulationV">
+            </div>
+
+            <div class="current-input">
+                <label>W → Terre</label>
+                <input type="number" id="insulationW">
+            </div>
+
+            <div class="current-input">
+                <label>Tension d'essai</label>
+                <select id="meggerVoltage">
+                    <option value="500">500 V</option>
+                    <option value="1000" selected>1000 V</option>
+                    <option value="2500">2500 V</option>
+                    <option value="5000">5000 V</option>
+                </select>
+            </div>
+
+            <div class="center">
+                <button id="analyzeMotor" disabled>
+                    Analyser le moteur
+                </button>
+            </div>
+        </div>
+
+        <div class="card health-card">
+            <h2><i class="fa-solid fa-heart-pulse"></i> État de santé du moteur</h2>
+
+            <div id="healthStatus" class="health-score">
+                En attente de l'analyse...
+            </div>
+
+            <h3 id="faultName"></h3>
+
+            <p id="recommendationText">
+                Effectuez une acquisition puis cliquez sur « Analyser le moteur ».
+            </p>
+
+            <hr>
+
+            <div id="analysisDetails"></div>
+        </div>
+
+    </div>
+
+</div>
+    </main>
+
+    <footer>
+        <button id="saveInspection" disabled>
+            <i class="fa-solid fa-floppy-disk"></i> Save Inspection
+        </button>
+        <button id="historyButton">
+            <i class="fa-solid fa-clock-rotate-left"></i> History
+        </button>
+    </footer>
+
+    <script src="../js/inspection.js"></script>
+</body>
+</html>

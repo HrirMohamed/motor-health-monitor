@@ -1,0 +1,42 @@
+{
+    "temperature": {
+
+        "warning": 60,
+
+        "high": 70,
+
+        "critical": 80
+
+    },
+
+    "vibration": {
+
+        "warning": 2.8,
+
+        "high": 4.5,
+
+        "critical": 7.0
+
+    },
+
+    "current": {
+
+        "imbalanceWarning": 5,
+
+        "imbalanceCritical": 10,
+
+        "highLoad": 90,
+
+        "overload": 110
+
+    },
+
+    "speed": {
+
+        "slipWarning": 5,
+
+        "slipCritical": 10
+
+    }
+
+}

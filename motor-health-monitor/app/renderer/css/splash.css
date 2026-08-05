@@ -1,0 +1,236 @@
+/* ==================================================
+   SPLASH PAGE
+================================================== */
+
+body{
+
+    margin:0;
+
+    font-family:"Segoe UI",sans-serif;
+
+    background:#EEF2F7;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+}
+
+/* ==================================================
+   SPLASH CONTAINER
+================================================== */
+
+.splash-container{
+
+    width:420px;
+
+    background:#FFF;
+
+    border-radius:15px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.logo img{
+    width:140px;      /* Adjust as needed */
+    height:auto;
+    object-fit:contain;
+}
+
+/* ==================================================
+   TITLE
+================================================== */
+
+.splash-container h1{
+
+    font-size:30px;
+
+    color:#16324F;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    font-size:16px;
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+/* ==================================================
+   LOADER
+================================================== */
+
+.loader{
+
+    width:45px;
+
+    height:45px;
+
+    margin:25px auto;
+
+    border:5px solid #DDD;
+
+    border-top:5px solid #1565C0;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==================================================
+   PORT SELECTION
+================================================== */
+
+.form-group{
+
+    margin-top:20px;
+
+    text-align:left;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#16324F;
+
+}
+
+.form-group select{
+
+    width:100%;
+
+    padding:10px;
+
+    border:1px solid #CCC;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    background:white;
+
+}
+
+.form-group select:focus{
+
+    outline:none;
+
+    border-color:#1565C0;
+
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.splash-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+.splash-buttons button{
+
+    flex:1;
+
+}
+
+/* ==================================================
+   STATUS
+================================================== */
+
+#statusText{
+
+    margin-top:20px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#555;
+
+    text-align:center;
+
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media(max-width:500px){
+
+    .splash-container{
+
+        width:90%;
+
+        padding:30px 20px;
+
+    }
+
+    .logo{
+
+        font-size:55px;
+
+    }
+
+    .splash-container h1{
+
+        font-size:24px;
+
+    }
+
+}

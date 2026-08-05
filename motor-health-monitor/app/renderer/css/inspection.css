@@ -1,0 +1,209 @@
+/* ==================================================
+   GLOBAL LAYOUT (NO SCROLLING)
+================================================== */
+body {
+    height: 100vh;
+    overflow: hidden; /* Lock the screen height */
+}
+
+main {
+    height: calc(100vh - 70px - 65px); /* Full height minus Header & Footer */
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+
+/* Base Card Tightening */
+.card {
+    padding: 10px 12px;
+}
+
+.card h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* ==================================================
+   TOP MOTOR SUMMARY
+================================================== */
+.motor-summary {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Fits all 7 fields in 1 single row */
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.summary-grid div {
+    background: #F8FAFC;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    border: 1px solid #E2E8F0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==================================================
+   DASHBOARD SPLIT (LEFT / RIGHT)
+================================================== */
+.dashboard {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 10px;
+    min-height: 0; /* Prevents grid blowout */
+}
+
+.left-panel,
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+}
+
+/* ==================================================
+   LEFT PANEL (SENSORS & PROGRESS)
+================================================== */
+.left-panel .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sensor-value {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #1565C0;
+    padding: 4px 0;
+}
+
+.progress-container {
+    height: 8px;
+    margin-top: 6px;
+    background: #E5E5E5;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #1565C0;
+    transition: 0.3s ease;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* ==================================================
+   RIGHT PANEL (MEASUREMENTS & HEALTH)
+================================================== */
+.right-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Puts Measurements & Health side-by-side */
+    gap: 10px;
+}
+
+/* Electrical Measurements Card */
+.currents-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto; /* Internal scroll only if window is extremely small */
+}
+
+.currents-card hr {
+    border: none;
+    border-top: 1px solid #E2E8F0;
+    margin: 6px 0;
+}
+
+.currents-card h3 {
+    font-size: 12px;
+    color: #16324F;
+    margin: 2px 0;
+}
+
+.current-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3px 0;
+}
+
+.current-input label {
+    font-size: 12px;
+}
+
+.current-input input,
+.current-input select {
+    padding: 3px 6px;
+    font-size: 12px;
+    height: 26px;
+    width: 110px;
+}
+
+.center {
+    margin-top: 6px;
+    text-align: center;
+}
+
+.center button {
+    padding: 6px 16px;
+    font-size: 13px;
+}
+
+/* Motor Health Card */
+.health-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.health-card{
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+}
+
+#faultName {
+    color: #D9534F;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+#recommendationText {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.3;
+}
+
+#analysisDetails {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.4;
+    width: 100%;
+
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+}

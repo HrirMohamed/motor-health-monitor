@@ -1,0 +1,67 @@
+.history-page{
+
+    padding:20px;
+
+}
+
+.toolbar{
+
+    margin:15px 0;
+
+}
+
+.primary-btn{
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#1565C0;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+}
+
+.primary-btn:hover{
+
+    background:#0D47A1;
+
+}
+
+#historyTable{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+#historyTable th{
+
+    background:#03301c;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+#historyTable td{
+
+    padding:10px;
+
+    border-bottom:1px solid #E2E8F0;
+
+}
+
+#historyTable tr:hover{
+
+    background:#F5F7FA;
+
+}

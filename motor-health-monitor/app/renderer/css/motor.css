@@ -1,0 +1,122 @@
+/* ==================================================
+   MOTOR PAGE
+================================================== */
+
+main{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+/* ==================================================
+   MOTOR CARD
+================================================== */
+
+.motor-card{
+
+    width:100%;
+
+    max-width:1100px;
+
+}
+
+.motor-card h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+/* ==================================================
+   MOTOR GRID
+================================================== */
+
+.motor-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+    margin-top:20px;
+
+}
+
+/* ==================================================
+   FORM
+================================================== */
+
+.motor-grid .form-group{
+
+    width:100%;
+
+}
+
+.motor-grid input,
+.motor-grid select{
+
+    width:100%;
+
+}
+
+/* ==================================================
+   START BUTTON
+================================================== */
+
+.motor-card .center{
+
+    margin-top:30px;
+
+}
+
+.motor-card button{
+
+    min-width:220px;
+
+    font-size:17px;
+
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media(max-width:1000px){
+
+    .motor-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:650px){
+
+    main{
+
+        padding:15px;
+
+    }
+
+    .motor-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .motor-card button{
+
+        width:100%;
+
+    }
+
+}

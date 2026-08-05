@@ -1,0 +1,97 @@
+[
+    {
+        "name": "Normal Operation",
+
+        "conditions": {
+
+            "temperature": "Normal",
+
+            "vibration": "Normal",
+
+            "load": "Normal",
+
+            "imbalance": "Normal"
+
+        },
+
+        "diagnosis": "Motor operating normally.",
+
+        "recommendation": "No maintenance required."
+    },
+
+    {
+        "name": "Bearing Wear",
+
+        "conditions": {
+
+            "temperature": "Normal",
+
+            "vibration": "High"
+
+        },
+
+        "diagnosis": "Possible bearing wear.",
+
+        "recommendation": "Inspect bearings and lubrication."
+    },
+
+    {
+        "name": "Cooling Failure",
+
+        "conditions": {
+
+            "temperature": "High",
+
+            "vibration": "Normal"
+
+        },
+
+        "diagnosis": "Cooling system problem.",
+
+        "recommendation": "Inspect cooling fan and air flow."
+    },
+
+    {
+        "name": "Motor Overload",
+
+        "conditions": {
+
+            "load": "Overload"
+
+        },
+
+        "diagnosis": "Motor overloaded.",
+
+        "recommendation": "Reduce mechanical load."
+    },
+
+    {
+        "name": "Phase Imbalance",
+
+        "conditions": {
+
+            "imbalance": "Warning"
+
+        },
+
+        "diagnosis": "Phase current imbalance detected.",
+
+        "recommendation": "Inspect electrical supply."
+    },
+
+    {
+        "name": "Critical Motor Condition",
+
+        "conditions": {
+
+            "temperature": "Critical",
+
+            "vibration": "Critical"
+
+        },
+
+        "diagnosis": "Severe mechanical problem.",
+
+        "recommendation": "Stop the motor immediately."
+    }
+]

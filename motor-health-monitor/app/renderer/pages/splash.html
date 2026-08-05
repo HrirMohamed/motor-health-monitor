@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Predictive Maintenance</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/splash.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body class="splash-body">
+
+    <div class="splash-container">
+
+        <!-- Logo -->
+        <div class="logo">
+    <img src="ocp-logo.jpg" alt="Company Logo">
+</div>
+
+        <!-- Title -->
+        <h1>Industrial Motor Diagnostic System</h1>
+
+        <!-- COM Port Selection -->
+        <div class="form-group">
+
+            <label for="portSelect">
+
+                Communication Port
+
+            </label>
+
+            <select id="portSelect">
+
+                <option>Loading ports...</option>
+
+            </select>
+
+        </div>
+
+        <!-- Connection Buttons -->
+        <div class="splash-buttons">
+
+            <button id="refreshPorts">
+
+                <i class="fa-solid fa-rotate-right"></i>
+                Refresh
+
+            </button>
+
+            <button id="connectButton">
+
+                <i class="fa-solid fa-plug"></i>
+                Connect
+
+            </button>
+
+        </div>
+
+        <!-- Divider -->
+        <hr>
+
+        <!-- History -->
+        <div class="history-section">
+
+            <button id="historyButton">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                History
+
+            </button>
+
+        </div>
+
+        <!-- Status -->
+        <p id="statusText">
+
+            Disconnected
+
+        </p>
+
+    </div>
+
+    <script src="../js/splash.js"></script>
+
+</body>
+
+</html>
