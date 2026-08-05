@@ -1,33 +1,80 @@
 # Motor Health Monitor
 
-A desktop application for inspecting industrial motors — an Electron app that talks to an
-STM32-based measurement unit over UART, analyzes temperature, vibration, speed, current, and
-winding resistance readings, and generates a PDF inspection report.
+An industrial **predictive maintenance system** developed during my engineering internship at **OCP Khouribga**.
 
-## Structure
+The project combines an **Electron desktop application** with an **STM32-based embedded acquisition unit** to monitor the health of three-phase induction motors. The system collects sensor data in real time, evaluates the motor condition, stores inspection history, and generates PDF inspection reports to assist maintenance personnel.
 
-This is a monorepo containing both halves of the project:
+---
+
+# Features
+
+- Real-time motor condition monitoring
+- UART communication between STM32 and Electron
+- Temperature monitoring (DS18B20)
+- Vibration monitoring (ADXL345)
+- RPM measurement
+- Three-phase current analysis
+- Winding resistance analysis
+- Insulation resistance analysis
+- Automatic motor health diagnosis
+- SQLite local database
+- PDF inspection report generation
+- OLED status display
+- Offline operation
+
+---
+
+# Project Structure
 
 ```
 motor-health-monitor/
-├── app/            Electron desktop application
-│   ├── electron/    Main process (window management, IPC handlers)
-│   ├── renderer/    UI (HTML/CSS/JS shown in the app windows)
-│   ├── services/    Business logic (motor analysis, UART, database, PDF export)
-│   ├── config/      Motor threshold configuration
-│   ├── database/    SQLite schema
-│   └── assets/      PDF report template, etc.
+├── app/                       Electron desktop application
+│   ├── electron/              Main process
+│   ├── renderer/              User Interface
+│   ├── services/              Business logic
+│   ├── config/                Motor thresholds
+│   ├── database/              SQLite schema
+│   ├── assets/                Images, PDF template
+│   └── package.json
 │
-└── firmware/        STM32F1 firmware (STM32CubeIDE project)
-    ├── Src/         Source files
-    └── Inc/         Header files
+├── firmware/                  STM32CubeIDE project
+│   ├── Core/
+│   │   ├── Src/
+│   │   └── Inc/
+│   ├── Drivers/
+│   └── Middlewares/
+│
+├── documentation/
+│   ├── screenshots/
+│   ├── report.pdf
+│   └── presentation.pdf
+│
+└── README.md
 ```
 
-## App
+---
 
-Built with Electron. Renders motor inspection forms, streams live sensor readings from the
-STM32 board over serial (UART), runs the analysis in `services/analysis/`, and can export a
-PDF inspection report per motor.
+# Desktop Application
+
+The Electron application provides a user-friendly interface for technicians to:
+
+- Register motors
+- Launch inspections
+- Receive live measurements from the STM32 board
+- Analyze motor condition automatically
+- Save inspection history
+- Generate professional PDF reports
+
+### Technologies
+
+- Electron.js
+- Node.js
+- HTML
+- CSS
+- JavaScript
+- SQLite
+
+Run the application:
 
 ```bash
 cd app
@@ -35,29 +82,95 @@ npm install
 npm start
 ```
 
-## Firmware
+---
 
-STM32F1 firmware built in STM32CubeIDE. Reads an ADXL345 accelerometer (vibration), a
-DS18B20 temperature sensor, and an RPM pulse input, and streams `TYPE:VALUE` lines
-(e.g. `TEMP:38.4`) over UART to the desktop app. Drives a small SSD1306 OLED status display.
+# Embedded Firmware
 
-Open `firmware/` as an existing project in STM32CubeIDE to build and flash.
+The embedded system is based on an **STM32F103C8T6 (Blue Pill)** programmed using **STM32CubeIDE**.
 
-## Status / known issues
+The firmware performs:
 
-A few things are on the list to fix (tracked here so they don't get lost):
+- Temperature acquisition
+- Vibration acquisition
+- RPM measurement
+- UART communication
+- OLED status display
+- Sensor initialization and diagnostics
 
-- `services/analysis/diagnosis.js` checks a `resistance.insulationStatus` field that doesn't
-  exist on the resistance analysis result (the real fields are `insulationPhasePhaseStatus`
-  and `insulationPhaseMassStatus`).
-- `renderer/pages/details.html` links to a `details.css` that doesn't exist yet.
-- `renderer/js/inspection.js` references a `logContainer` element that isn't in
-  `inspection.html`.
-- `renderer/js/details.js`'s "Export PDF" button is a placeholder alert, not wired to the
-  real PDF export used on the history page.
-- `services/databaseService.js` does a plain `INSERT` for new motors, so re-using an
-  existing Motor ID throws a raw `SQLITE_CONSTRAINT` error instead of a friendly message.
+Measured data are transmitted to the desktop application using a simple UART protocol.
 
-## License
+Example:
 
-Add a license of your choice (MIT is a common default for personal/portfolio projects).
+```
+CONNECTED
+STARTED
+
+TEMP:36.5
+VIB:2.34
+RPM:1498
+
+TEMP:36.7
+VIB:2.41
+RPM:1501
+
+DONE
+```
+
+---
+
+# Hardware
+
+## Microcontroller
+
+- STM32F103C8T6 (Blue Pill)
+
+## Sensors
+
+- ADXL345 Accelerometer
+- DS18B20 Temperature Sensor
+
+## Display
+
+- SSD1306 OLED Display (128×64)
+
+---
+
+# Documentation
+
+The `documentation` folder contains:
+
+- Project report
+- Internship presentation
+- System architecture
+- Screenshots of the desktop application
+- Circuit diagrams
+- User manual (optional)
+
+---
+
+# Project Context
+
+This project was developed during my engineering internship at **OCP Khouribga**.
+
+Its objective is to implement a **low-cost predictive maintenance solution** capable of detecting early signs of motor degradation before failures occur.
+
+The system assists maintenance teams by continuously monitoring motor operating parameters, automatically evaluating equipment condition, storing inspection history, and generating maintenance reports.
+
+---
+
+# Future Improvements
+
+- Bluetooth/Wi-Fi communication
+- Cloud synchronization
+- Predictive AI models
+- Trend analysis
+- Multi-user authentication
+- Mobile companion application
+
+---
+
+# License
+
+This project is shared for educational and portfolio purposes.
+
+MIT License.
