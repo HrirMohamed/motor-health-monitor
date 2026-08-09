@@ -138,6 +138,22 @@ RPM:1501
 
 DONE
 ```
+## Wiring / Schematic
+
+
+<img width="1414" height="988" alt="prototype(1)" src="https://github.com/user-attachments/assets/3b441ece-4732-4e48-ba13-74b0c0572aba" />
+
+
+The prototype is built around an **STM32 Blue Pill** (STM32F103C8T6):
+
+| Peripheral | Interface | Notes |
+|---|---|---|
+| KY-033 (IR sensor) | Digital input (external interrupt) | RPM measurement via pulse detection |
+| DS18B20 | 1-Wire | Temperature |
+| ADXL345 | I2C (bus 1) | Vibration |
+| OLED display | I2C (bus 2) | On-device status/readings |
+| USB_TTL | UART (RX/TX) | Serial link to the Electron app |
+| Buzzer | Digital output | Connection/acquisition feedback |
 
 ## Hardware
 
