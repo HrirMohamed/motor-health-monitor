@@ -1,4 +1,4 @@
-## Prototype
+
 
 ![Motor Health Monitor Prototype](./assets/prototype.png)
 
