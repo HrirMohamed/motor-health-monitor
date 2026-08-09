@@ -2,4 +2,4 @@
 
 ![Motor Health Monitor Prototype](./assets/prototype.png)
 
-*STM32-based acquisition unit connected to a three-phase induction motor, paired with the Electron desktop dashboard.*
+An industrial predictive maintenance system developed during my internship at OCP Khouribga. The project combines an STM32-based embedded acquisition unit with an Electron desktop application to monitor the health of three-phase induction motors in real time.
