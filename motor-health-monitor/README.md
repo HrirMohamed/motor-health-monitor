@@ -176,7 +176,6 @@ The prototype is built around an **STM32 Blue Pill** (STM32F103C8T6):
 The `documentation` folder contains:
 
 - Project report
-- Internship presentation
 - System architecture
 - Screenshots of the desktop application
 - Circuit diagrams
