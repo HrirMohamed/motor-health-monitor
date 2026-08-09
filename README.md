@@ -60,4 +60,4 @@ The prototype is built around an **STM32 Blue Pill** (STM32F103C8T6):
 
 ## Repository
 
-**Demo video:** [Watch it here](https://youtube.com/watch?v=XXXXXXXXXXX) *(update with your actual video link)*
+**Demo video:** [Watch it here](https://drive.google.com/drive/u/0/folders/1AaXh50N0zW4D9l5Si__vS2PoLs3jMpKc) 
